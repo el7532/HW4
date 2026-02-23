@@ -13,6 +13,38 @@ public class Operation {
      */
     public static int performOperation(char op, int left, int right) {
 
-        return -1; // fix this and fill the rest of the method based on JavaDoc
+        
+        if (op != '+' && op != '-' && op != '*' && op != '/') {
+                throw new IllegalArgumentException();
+            } 
+        else if (op == '/' && right == 0) { 
+                throw new ArithmeticException();
+        } else {
+            if (op == '+') {
+                int sum = left + right;
+                return sum; 
+            } else if (op == '-') { 
+                int diff = left - right; 
+                return diff;
+            } else if (op == '*') {
+                int product = left * right;
+                return product;
+            } else {
+                int quotient = left / right;
+                return quotient;
+            } 
+        }
+    }
+
+    public static void main(String[] args) {
+        int left = 1; 
+        int right = 10; 
+        System.out.println(performOperation('+', left, right));
+        int left3 = 20; 
+        int right3 = 10;
+        System.out.println(performOperation('/', left3, right3));
+        int left4 = 45; 
+        int right4 = 23; 
+        System.out.println(performOperation('-', left4, right4));
     }
 }
