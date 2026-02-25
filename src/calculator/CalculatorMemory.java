@@ -85,6 +85,7 @@ public class CalculatorMemory {
         }
 
         sb.append("---");
+        sb.append("\n")
         return sb.toString(); 
     }
 }
