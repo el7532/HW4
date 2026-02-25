@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class CalculatorMemory {
 
-    LinkedList<Integer> list = new LinkedList<Integer>();
+    LinkedList<Integer> memory = new LinkedList<Integer>();
     /*
     *
     * Add the number to memory
@@ -12,37 +12,37 @@ public class CalculatorMemory {
     */
     public void push(int number) {
 
-        list.push(number);
+        memory.push(number);
 
     }
 
     public int pop(){
 
-        return list.pop();
+        return memory.pop();
 
     }
     
     public boolean isEmpty(){
 
-        return list.isEmpty();
+        return memory.isEmpty();
     }
 
     public void clear(){
 
-            list.clear();
+            memory.clear();
     }
     
 
     public LinkedList<Integer> getMemory() {
 
-        return list;
+        return memory;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(); 
 
-        for (Integer num : list) {
+        for (Integer num : memory) {
             sb.append(num); 
             sb.append("\n"); 
         }

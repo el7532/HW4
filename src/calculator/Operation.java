@@ -18,7 +18,7 @@ public class Operation {
                 throw new IllegalArgumentException();
             } 
         else if (op == '/' && right == 0) { 
-                throw new ArithmeticException();
+                throw new ArithmeticException("Error: divide by zero");
         } else {
             if (op == '+') {
                 int sum = left + right;
