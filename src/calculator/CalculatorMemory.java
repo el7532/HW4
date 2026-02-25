@@ -21,7 +21,6 @@ public class CalculatorMemory {
      */
     public void push(int number) {
         memory.push(number); // O(1)
-
     }
 
     /**
@@ -56,7 +55,7 @@ public class CalculatorMemory {
      * Removes all elements from the stack.
      */
     public void clear(){
-            memory.clear();
+        memory.clear();
     }
     
     /**

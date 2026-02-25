@@ -65,7 +65,6 @@ public class Calculator {
             char op = input.charAt(0);
 
             // Ensure that dividing by zero doesn't change the stack
-
             try {
                 int result = Operation.performOperation(op, left, right);
                 memory.push(result);
@@ -177,5 +176,9 @@ public class Calculator {
         }
     }
 
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        calc.run();
+    }
 }
 
