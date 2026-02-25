@@ -2,42 +2,80 @@ package calculator;
 
 import java.util.LinkedList;
 
+/**
+* Represents the memory of the postfix calculator.
+
+* This class uses a LinkedList to implement a stack. 
+* 
+*/
+
 public class CalculatorMemory {
+    
+    /** Underlying stack structure storing integer values */
+    private LinkedList<Integer> memory = new LinkedList<Integer>();
 
-    LinkedList<Integer> memory = new LinkedList<Integer>();
-    /*
-    *
-    * Add the number to memory
-    * 
-    */
+    /**
+     * Pushes a number onto the top of the stack.
+     * 
+     * @param number the integer value to add to memory
+     */
     public void push(int number) {
-
-        memory.push(number);
+        memory.push(number); // O(1)
 
     }
 
+    /**
+     * Removes and returns the top value from the stack.
+     * 
+     * @return the most recently pushed integer
+     * @throws java.util.NoSuchElementException if the stack is empty
+     */
     public int pop(){
-
-        return memory.pop();
-
+        return memory.pop(); // O(1)
     }
     
+    /**
+     * Checks whether the stack is empty.
+     * 
+     * @return true if the stack contains no elements, false otherwise
+     */ 
     public boolean isEmpty(){
-
         return memory.isEmpty();
     }
 
-    public void clear(){
+    /**
+     * Returns the number of elements currently stored in memory.
+     * 
+     * @return the size of the stack
+     */
+    public int size() {
+        return memory.size();
+    }
 
+    /**
+     * Removes all elements from the stack.
+     */
+    public void clear(){
             memory.clear();
     }
     
-
+    /**
+     * Returns the memory object of the LinkedList.
+     * 
+     * @return the LinkedList storing the stack values
+     */
     public LinkedList<Integer> getMemory() {
-
         return memory;
     }
 
+    /**
+     * Returns a formatted String representation of the stack contents.
+     * 
+     * The top of the stack is printed first, followed by each element
+     * on a new line. The output ends with "---" to match the instructions.
+     *
+     * @return formatted String
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(); 
@@ -49,33 +87,5 @@ public class CalculatorMemory {
 
         sb.append("---");
         return sb.toString(); 
-    }
-
-    public static void main(String[] args) {
-        CalculatorMemory mem = new CalculatorMemory();
-
-        mem.push(1); 
-        mem.push(2);
-        mem.push(3); 
-
-        System.out.println("Empty? " + mem.isEmpty());
-
-
-        System.out.println("\nAfter pushing 1, 2, 3:");
-
-        System.out.println(mem.toString());
-
-        int popped = mem.pop();
-        System.out.println("\nPopped: " + popped);
-
-        System.out.println("\nAfter one pop:");
-        System.out.println(mem.toString());
-
-        mem.clear(); 
-
-        System.out.println("\nAfter clear():");
-        System.out.println(mem.toString());
-        System.out.println("Empty now? " + mem.isEmpty());
-
     }
 }
