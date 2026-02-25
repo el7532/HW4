@@ -46,7 +46,7 @@ public class Calculator {
      */
     private int evaluation(String input) {
 
-        String i = input.strip();
+        String i = input.trim();
         
         // Case 1: Input is a number
         if (isInteger(i)) {
@@ -128,25 +128,25 @@ public class Calculator {
             String input = scanner.nextLine();
 
             // Exit condition
-            if (input.strip().equals("quit")) {
+            if (input.trim().equals("quit")) {
                 break;
             }
             
             try {
 
                 // Handle operator
-                if (isOperator(input.strip())) {
+                if (isOperator(input.trim())) {
                     int answer = evaluation(input);
                     System.out.println("Answer: " + answer);
                 } 
                 
                 // Handle integer
-                else if (isInteger(input.strip())) {
+                else if (isInteger(input.trim())) {
                     evaluation(input);
                 } 
 
                 // Handle pop
-                else if (input.strip().equals("pop")) {
+                else if (input.trim().equals("pop")) {
                     if (!memory.isEmpty()) {
                         System.out.println("Answer: " + memory.pop());
                     } else {
@@ -155,7 +155,7 @@ public class Calculator {
                 } 
                 
                 // Handle clear
-                else if (input.strip().equals("clear")) {
+                else if (input.trim().equals("clear")) {
                     memory.clear();
                 }
 
